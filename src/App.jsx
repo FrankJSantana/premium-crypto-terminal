@@ -80,8 +80,16 @@ function DashboardContent({ searchTerm, setSearchTerm }) {
   ) : [];
 
   return (
-    <div className="flex min-h-screen bg-background text-foreground transition-all duration-300">
+    <div className="flex min-h-screen bg-background text-foreground transition-all duration-300 relative overflow-hidden">
       <div className="bg-mesh" />
+
+      {/* Background Watermark */}
+      <div className="fixed -bottom-10 -right-10 watermark-text rotate-12 opacity-[0.03] text-6xl hidden lg:block tracking-widest leading-none">
+        Franklin Jiménez Santana
+      </div>
+      <div className="fixed top-1/2 -left-20 watermark-text -rotate-90 opacity-[0.02] text-4xl hidden xl:block">
+        Institutional Premium Terminal
+      </div>
 
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} triggerModal={triggerModal} />
 

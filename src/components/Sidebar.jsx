@@ -10,7 +10,8 @@ import {
     Database,
     PieChart,
     ShieldCheck,
-    Zap
+    Zap,
+    Copyright
 } from 'lucide-react';
 import { useTheme } from './ThemeContext';
 
@@ -73,7 +74,7 @@ const Sidebar = ({ activeTab = 'General', setActiveTab, triggerModal }) => {
                         </div>
                     </div>
                     <div>
-                        <h1 className="text-2xl font-black tracking-tighter text-white">CryptoDash</h1>
+                        <h1 className="text-2xl font-black tracking-tighter text-foreground">CryptoDash</h1>
                         <div className="flex items-center gap-1.5 mt-1">
                             <ShieldCheck className="w-3 h-3 text-primary" />
                             <p className="text-[9px] text-primary font-black uppercase tracking-widest leading-none">Nodo Verificado</p>
@@ -117,7 +118,7 @@ const Sidebar = ({ activeTab = 'General', setActiveTab, triggerModal }) => {
                             className="flex-1 flex items-center justify-center gap-3 py-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/5 transition-all text-[10px] font-black uppercase tracking-widest"
                         >
                             {theme === 'light' ? <Moon className="w-4 h-4 text-primary" /> : <Sun className="w-4 h-4 text-primary" />}
-                            Modo {theme === 'light' ? 'Claro' : 'Oscuro'}
+                            {theme === 'light' ? 'Oscuro' : 'Claro'}
                         </button>
                         <button
                             onClick={() => handleAction('Finalización', 'Cerrando todos los sockets activos y limpiando la caché efímera. Buen viaje.', 'warning')}
@@ -125,6 +126,14 @@ const Sidebar = ({ activeTab = 'General', setActiveTab, triggerModal }) => {
                         >
                             <LogOut className="w-4 h-4" />
                         </button>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-1.5 opacity-30 hover:opacity-100 transition-opacity pb-2">
+                        <div className="flex items-center gap-2">
+                            <Copyright className="w-3 h-3" />
+                            <span className="text-[8px] font-black tracking-widest uppercase">2026 Institutional</span>
+                        </div>
+                        <p className="text-[9px] font-bold text-primary uppercase tracking-tighter">Franklin Jiménez Santana</p>
                     </div>
                 </div>
             </aside>
